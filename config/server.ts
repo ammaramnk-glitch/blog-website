@@ -1,7 +1,12 @@
 export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
-   url: env('PUBLIC_URL', 'https://blog-website-1-to2c.onrender.com'),
+  url: env('PUBLIC_URL', 'https://blog-website-1-to2c.onrender.com'),
+  admin: {
+    auth: {
+      secret: env('ADMIN_JWT_SECRET', 'your-secret-key-here'),
+    },
+  },
   app: {
     keys: env.array('APP_KEYS'),
   },
