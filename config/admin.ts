@@ -5,9 +5,13 @@ export default ({ env }) => ({
       maxSessionLifespan: 30 * 24 * 60 * 60 * 1000, // 30 days in ms
       maxRefreshTokenLifespan: 60 * 24 * 60 * 60 * 1000, // 60 days in ms
     },
-    secret: env('ADMIN_JWT_SECRET'),
+    secret: env('ADMIN_JWT_SECRET','iQGNViLlFvqu+4pddXBxWgHPKRInCoj15sI9V9xbqO8=np'),
+    options: {
+      secure: false, // 👈 Force non-secure cookie
+    },
     
   },
+  url: env('PUBLIC_ADMIN_URL', '/admin'),
   apiToken: {
     salt: env('API_TOKEN_SALT'),
   },
